@@ -2,8 +2,6 @@
 #1.0: Scope
 # Copy either: roms, gamelists or artwork/mixart/media or all of them from the specified folders.
 # great from moving the entire roms location from one place to another, or if you want to split the media files.
-
-
 #2.0: Variables:
 #2.1: Constants:
 # #2.2: Locations 
