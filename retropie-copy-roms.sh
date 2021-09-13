@@ -93,7 +93,7 @@ select option in all roms gamelist mixart/snap/wheel EXIT ; do
   esac
 done
 #Get the ROM files to copy from the rom location
-rom_to_copy=( $(find $rom_location -maxdepth 1 -mindepth 1 -type d -printf '%f\n' | sort) )
+rom_to_copy=( $(find "$rom_location" -maxdepth 1 -mindepth 1 -type d -printf '%f\n' | sort) )
 printf "Here is the list of ROMS to copy into folder: \"$rom_destination\" \n"
 for i in "${rom_to_copy[@]}"; do 
   if [ "${rom_to_copy[-1]}" !=  "$i" ]; then 
