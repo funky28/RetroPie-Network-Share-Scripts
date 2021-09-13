@@ -148,7 +148,7 @@ logging_end () {
 }
 #3.2.4: Settings:
 settings_dir () {
-  declare -a dir_overlay=("artwork" "logs" "roms_local" "roms_network" "settings" "work")
+  declare -a dir_overlay=("logs" "roms_local" "roms_network" "settings" "work")
   if [ ! -d "$folder_overlay" ]; then
     mkdir "$folder_overlay"
   fi
@@ -188,12 +188,11 @@ command_mount_autostart () {
   logger_sucess "Updated script to include share mount at: $file_autostart"
 }
 command_overlay_autostart () {
-  lower1="$folder_overlay_artwork"
-  lower2="$folder_overlay_roms_network"
+  lower1="$folder_overlay_roms_network"
   upper="$folder_overlay_roms_local"
   work="$folder_overlay_work"
   merged="$folder_roms"
-  printf "sudo mount -t overlay $overlay_mount_name -o lowerdir="$lower1":"$lower2",upperdir="$upper",workdir="$work" "$merged" " >> "$file_autostart"
+  printf "sudo mount -t overlay $overlay_mount_name -o lowerdir="$lower1",upperdir="$upper",workdir="$work" "$merged" " >> "$file_autostart"
   logger_sucess "Updated script to include overlay mount at: $file_autostart"
 }
 command_delete_script_id () {
